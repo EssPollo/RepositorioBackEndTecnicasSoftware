@@ -1,12 +1,11 @@
-from flask import Flask,jsonify, request
+from flask import Flask
+from controllers.usuarioController import usuario_blueprint
+from configDataBase import init_db
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def root():
-    return 'hello serch'
-
+init_db(app)
+#registro de blueprint
+app.register_blueprint(usuario_blueprint)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

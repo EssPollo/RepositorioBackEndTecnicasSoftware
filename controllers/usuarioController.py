@@ -17,3 +17,50 @@ def create_user():
         return jsonify(usuario.nombre)
     except Exception as e:
         return jsonify(error = str(e)),400
+
+@usuario_blueprint.route('/api/usuario/obtenerTodos', methods=['GET'])
+def get_all_user():
+    try:
+        usuarios = Usuario.query.all()
+        return jsonify([usuario.obtenerTodos() for usuario in usuarios])
+    except Exception as e:
+        return jsonify(error = str(e)),400
+
+@usuario_blueprint.route('/api/usuario/obtenerPorId/<int:id>', methods=['GET'])
+def get_user_id(id):
+    try:
+        usuario = Usuario.query.get(id)
+        if usuario is None:
+            return jsonify(error="Usuario no encontrado"), 404
+        return jsonify(usuario.obtenerPorId())
+    except Exception as e:
+        return jsonify(error=str(e)), 400
+
+@usuario_blueprint.route('/api/usuario/actualizar/<int:id>', methods=['PUT'])
+def update_user(id):
+    try:
+        data = request.get_json()
+        usuario = Usuario.query.get(id)
+        if usuario is None:
+            return jsonify(error="Usuario no encontrado"), 404
+        usuario.nombre = data['nombre']
+        usuario.apellidoP = data['apellidoP']
+        usuario.apellidoM = data['apellidoM']
+        usuario.correo = data['correo']
+        usuario.contrasena = data['contrasena']
+        db.session.commit()
+        return jsonify(usuario.nombre)
+    except Exception as e:
+        return jsonify(error=str(e)), 400
+    
+@usuario_blueprint.route('/api/usuario/eliminar/<int:id>', methods=['DELETE'])
+def delete_user(id):
+    try:
+        usuario = Usuario.query.get(id)
+        if usuario is None:
+            return jsonify(error="Usuario no encontrado"), 404
+        db.session.delete(usuario)
+        db.session.commit()
+        return jsonify(usuario.nombre)
+    except Exception as e:
+        return jsonify(error=str(e)), 400    

@@ -11,3 +11,10 @@ class Usuario(db.Model):
     
     def __repr__(self):
         return '<Usuario %r>' %self.nombre
+    
+    def obtenerTodos(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+    
+    def obtenerPorId(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+    

@@ -28,7 +28,7 @@ document.getElementById('registerButton').addEventListener('click', function(eve
     .then(data => {
         console.log('Success:', data);
         // Redirige al usuario a index.html
-        window.location.href = '/./templates/login.html';
+        window.location.href = '/login';
     })
     .catch((error) => {
         console.error('Error:', error);

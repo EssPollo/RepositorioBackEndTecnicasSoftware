@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adminlte.min.css') }}">
+    <!-- Agrega aquí más referencias a CSS o JS según sea necesario -->
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Encabezado, barra lateral, pie de página, etc. -->
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/adminlte.min.js') }}"></script>
+    <!-- Agrega aquí más scripts si es necesario -->
+</body>
+</html>

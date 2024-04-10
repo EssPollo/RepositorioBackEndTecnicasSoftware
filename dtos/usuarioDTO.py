@@ -1,6 +1,6 @@
-class UsuarioDTO:
+class UsuarioDTO():
     id:int
-    nombre:str
+    nombre:str 
     apellidoP:str
     apellidoM:str
     correo:str

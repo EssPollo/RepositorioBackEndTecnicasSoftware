@@ -24,7 +24,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Autenticarse para iniciar sesión</p>
 
-      <form action="index3" method="post">
+      <form id="loginForm">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Correo" id="correo">
           <div class="input-group-append">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña" id="contraseña">
+          <input type="password" class="form-control" placeholder="Contraseña" id="contrasena">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -80,7 +80,7 @@
   </div>
 </div>
 <!-- /.login-box -->
-
+<script src="/static/js/loginController.js"></script>
 <!-- jQuery -->
 <script src="/static/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -88,6 +88,6 @@
 <!-- AdminLTE App -->
 <script src="/static/dist/js/adminlte.min.js"></script>
 
-<script>src="/static/js/loginController.js"</script>
+
 </body>
 </html>

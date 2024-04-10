@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Imprime los datos del usuario en la consola
         console.log('Datos del usuario:', userData);
     
-        fetch('/usuario_blueprint/api/usuario/obtenerPorCorreoyContrasena', { 
+        fetch('http://127.0.0.1:5000/usuario_blueprint/api/usuario/obtenerPorCorreoyContrasena', { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             body: JSON.stringify(userData)
         })
         .then(response => {
+            console.log('Respuesta del servidor:', response);
             if (!response.ok) {
                 throw new Error('Usuario no encontrado');
             }
@@ -25,12 +26,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(data => {
             console.log('Success:', data);
             // Redirige al usuario a index.html
-            window.location.href = '/../templates/index.html';
+            window.location.href = '/index';
         })
         .catch((error) => {
-            console.error('Error:', error);
-            console.log('Usuario no encontrado');
             // Aquí puedes manejar el error, mostrar un mensaje, etc.
+            console.error('Error:', error);
             alert('Usuario no encontrado');
         });
     });

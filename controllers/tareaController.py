@@ -5,7 +5,7 @@ from configDataBase import db
 
 tarea_blueprint = Blueprint('tarea', __name__)
 
-@tarea_blueprint.route('/api/tarea/guardar', methods=['POST'])
+@tarea_blueprint.route('/api/tareas/guardar', methods=['POST'])
 def create_task():
     try:
         data = request.get_json()

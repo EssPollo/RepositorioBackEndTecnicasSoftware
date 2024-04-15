@@ -1,4 +1,4 @@
-from configDataBase import db
+from models.configDataBase import db
 
 class Usuario(db.Model):
     __tablename__ = 'usuario'

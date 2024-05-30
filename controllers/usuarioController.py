@@ -15,13 +15,13 @@ def create_user():
         db.session.commit()  
         return jsonify("Usuario guardado exitosamente"),200
     except Exception as e:
-        return jsonify("Error al guardar al usuario"),400
+        return jsonify("Error al guardar al usuario por el motivo: " + str(e)),400
 
 @usuario_blueprint.route('/api/usuario/obtenerTodos', methods=['GET'])
 def get_all_user():
     try:
         usuarios = Usuario.query.all()
-        return jsonify([usuario.obtenerTodos() for usuario in usuarios])
+        return jsonify([usuario.obtenerTodos() for usuario in usuarios]),200
     except Exception as e:
         return jsonify(error = str(e)),400
 

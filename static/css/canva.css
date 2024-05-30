@@ -1,0 +1,75 @@
+.container-fluid {
+  width: 100%;
+  padding: 20px;
+}
+
+#bizcanvas {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#bizcanvas th, #bizcanvas td {
+  width: 33.33%;
+  border: 1px solid #000;
+  padding: 10px;
+  vertical-align: top;
+}
+
+h4 {
+  margin: 0;
+}
+
+/* Estilo para el botón circular */
+.circular-button {
+    background-color: #007bff; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Color del texto */
+    border: none;
+    border-radius: 50%; /* Para hacerlo circular */
+    width: 50px; /* Ancho */
+    height: 50px; /* Altura */
+    font-size: 24px; /* Tamaño del texto */
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* Estilo para centrar el icono dentro del botón */
+  .circular-button i {
+    line-height: 50px; /* Alinea verticalmente */
+  }
+  
+  /* Estilo para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Ancho máximo del modal */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

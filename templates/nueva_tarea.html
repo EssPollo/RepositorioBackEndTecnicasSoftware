@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nueva Tarea</title>
+</head>
+<body>
+<h2>Agregar Nueva Tarea</h2>
+<form id="taskForm" action="submit_form.html" method="POST">
+  <label for="id">ID:</label><br>
+  <input type="number" id="id" name="id" required><br>
+  <label for="title">Título:</label><br>
+  <input type="text" id="title" name="title" required><br>
+  <label for="description">Descripción:</label><br>
+  <textarea id="description" name="description" required></textarea><br>
+  <label for="dueDate">Fecha de Entrega:</label><br>
+  <input type="date" id="dueDate" name="dueDate" required><br>
+  <label for="priority">Prioridad:</label><br>
+  <select id="priority" name="priority" required>
+    <option value="alta">Alta</option>
+    <option value="media">Media</option>
+    <option value="baja">Baja</option>
+  </select><br>
+  <label for="time">Tiempo estimado:</label><br>
+  <input type="text" id="time" name="time" required><br><br>
+  <button type="submit">Guardar</button>
+</form>
+</body>
+</html>

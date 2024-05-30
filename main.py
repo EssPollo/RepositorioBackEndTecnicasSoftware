@@ -1,13 +1,14 @@
 from flask import Flask
 from flask import render_template
 from controllers.usuarioController import usuario_blueprint
-from models.configDataBase import init_db
-
+from configDataBase import init_db
+from controllers.tareaController import tarea_blueprint
 
 app = Flask(__name__)
 init_db(app)
 #registro de blueprint
-app.register_blueprint(usuario_blueprint,url_prefix='/usuario_blueprint')
+app.register_blueprint(tarea_blueprint)
+app.register_blueprint(usuario_blueprint)
 
 
 @app.route('/login')
